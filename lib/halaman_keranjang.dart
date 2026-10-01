@@ -1,11 +1,6 @@
-// ═══════════════════════════════════════════════════════════
-// FILE: halaman_keranjang.dart
-// Fungsi: Halaman keranjang (semua item yang quantity > 0)
-// Dibuka dari: halaman_profil.dart → klik tombol "Pemesanan"
-// Data dari: FoodItem.daftarMakanan (filter quantity > 0)
-// ═══════════════════════════════════════════════════════════
+
 import 'package:flutter/material.dart';
-import 'models/food_item.dart';
+import 'models/stationery_item.dart';
 
 class HalamanKeranjang extends StatelessWidget {
   const HalamanKeranjang({super.key});
@@ -33,9 +28,9 @@ class HalamanKeranjang extends StatelessWidget {
       // Tampilan: Bar oranye "Keranjang Pesanan" + tombol back
       // ═════════════════════════════════════════════════════
       appBar: AppBar(
-        title: Text('Keranjang Pesanan',       // ← VARIABEL: judul halaman
+        title: Text('Barang Terlaris',       // ← VARIABEL: judul halaman
           style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
-        backgroundColor: Color(0xFFE07B39),
+        backgroundColor: Color.fromARGB(255, 99, 57, 224),
         iconTheme: IconThemeData(color: Colors.white),
         centerTitle: true,
       ),
@@ -77,7 +72,7 @@ class HalamanKeranjang extends StatelessWidget {
                   Text('Belum ada pesanan',    // ← VARIABEL: teks kosong
                     style: TextStyle(fontSize: 18, color: Colors.grey, fontWeight: FontWeight.w500)),
                   SizedBox(height: 8),
-                  Text('Pesan makanan dari halaman Menu',
+                  Text('',
                     style: TextStyle(fontSize: 13, color: Colors.grey[400])),
                 ],
               ),
@@ -189,16 +184,16 @@ class HalamanKeranjang extends StatelessWidget {
                         child: ElevatedButton(
                           onPressed: () {
                             ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-                              content: Text('Pesanan dikonfirmasi! Total: Rp ${formatHarga(grandTotal)}'),
-                              backgroundColor: Color(0xFFE07B39)));
+                              content: Text(' Total penjualan: Rp ${formatHarga(grandTotal)}'),
+                              backgroundColor: Color.fromARGB(255, 108, 131, 233)));
                           },
                           style: ElevatedButton.styleFrom(
-                            backgroundColor: Color(0xFFE07B39),
+                            backgroundColor: Color.fromARGB(255, 100, 149, 247),
                             foregroundColor: Colors.white,
                             padding: EdgeInsets.symmetric(vertical: 14),
                             shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
                           ),
-                          child: Text('Pesan Sekarang',  // ← VARIABEL: teks tombol
+                          child: Text('Record Penjualan',  // ← VARIABEL: teks tombol
                             style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
                         ),
                       ),
@@ -218,7 +213,7 @@ class HalamanKeranjang extends StatelessWidget {
 
               ],
             ),
-      // ═══ AKHIR [BODY-KERANJANG] ══════════════════════════
+     
     );
   }
 }

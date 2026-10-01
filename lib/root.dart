@@ -1,36 +1,4 @@
-// ══════════════════════════════════════════════════════════════════════════════
-// FILE: root.dart
-// FUNGSI: Pembungkus utama + Bottom Navigation Bar
-// Import di: main.dart -> home: RootHalaman()
-// ══════════════════════════════════════════════════════════════════════════════
-//
-// ❓ PANDUAN UNTUK KUIS BESOK (MULAI DARI FILE KOSONG TEMPLATE STATEFULWIDGET):
-//
-// Saat kuis nanti, VS Code beri template default seperti ini:
-//
-//   import 'package:flutter/material.dart';
-//
-//   class NamaHalaman extends StatefulWidget {
-//     const NamaHalaman({super.key});
-//     @override
-//     State<NamaHalaman> createState() => _NamaHalamanState();
-//   }
-//
-//   class _NamaHalamanState extends State<NamaHalaman> {
-//     @override
-//     Widget build(BuildContext context) {
-//       return Scaffold(         ← DI DALAM return Scaffold( inilah semua widget ditempel
-//
-//       );                      ← Kurung tutup Scaffold
-//     }
-//   }
-//
-// CARA MEMAKAI FILE INI (root.dart) SEBAGAI REFERENSI:
-//   1. Lihat kode di bawah ini.
-//   2. Sesuaikan nama class, nama variabel, dan nama halaman.
-//   3. Widget seperti BottomNavigationBar, body, dll ditempatkan DALAM Scaffold().
-//
-// ══════════════════════════════════════════════════════════════════════════════
+
 
 import 'package:flutter/material.dart';
 import 'halaman_beranda.dart';
@@ -55,13 +23,7 @@ class _RootHalamanState extends State<RootHalaman> {
   @override
   Widget build(BuildContext context) {
 
-    // ── DAFTAR HALAMAN (HUBUNGAN TAB DENGAN FILE HALAMAN) ─────────────────────
-    // ❓ TANYA: "Nama filenya halaman_beranda.dart, kok di sini jadi HalamanBeranda()?"
-    // 💡 JAWAB: 
-    //    1. 'halaman_beranda.dart' adalah NAMA FILE (di-import di baris paling atas).
-    //    2. 'HalamanBeranda()' adalah NAMA CLASS yang ada DI DALAM file tersebut.
-    //    Coba buka file halaman_beranda.dart, kamu pasti lihat tulisan: "class HalamanBeranda..."
-    //    Jadi kita memanggil nama class-nya, bukan nama filenya!
+    
     final daftarHalaman = <Widget>[
       HalamanBeranda(), // Index 0: Memanggil CLASS HalamanBeranda dari file halaman_beranda.dart
       HalamanProfil(),  // Index 1: Memanggil CLASS HalamanProfil dari file halaman_profil.dart
@@ -78,22 +40,7 @@ class _RootHalamanState extends State<RootHalaman> {
       body: daftarHalaman[_indeksHalaman],
 
 
-      // ══════════════════════════════════════════════════════════════════════
-      // bottomNavigationBar: Bar Navigasi Bawah
-      //
-      // ❓ CARA 2 - NEMPEL KODE BOTTOM NAV DI SINI (DARI INDEPENDENT/):
-      //    Tempel MULAI DARI "BottomNavigationBar(" sampai kurung tutup "),"
-      //    TEPAT DI SEBELAH KANAN "bottomNavigationBar:" seperti contoh berikut:
-      //
-      //    bottomNavigationBar: BottomNavigationBar(    ← tempel mulai dari sini
-      //      currentIndex: _indeksHalaman,
-      //      onTap: (indeks) {
-      //        setState(() { _indeksHalaman = indeks; });
-      //      },
-      //      items: const [ ... ],
-      //    ),                                           ← sampai tanda koma ini
-      //
-      // ══════════════════════════════════════════════════════════════════════
+    
       bottomNavigationBar: BottomNavigationBar(
         // 1. currentIndex membaca _indeksHalaman (0 atau 1)
         currentIndex: _indeksHalaman,              // ← angka tab yg aktif

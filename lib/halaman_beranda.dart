@@ -1,11 +1,6 @@
-// ═══════════════════════════════════════════════════════════
-// FILE: halaman_beranda.dart
-// Fungsi: Halaman daftar menu makanan (bisa scroll)
-// Import di: root.dart → daftarHalaman[0]
-// Data dari: models/food_item.dart → FoodItem.daftarMakanan
-// ═══════════════════════════════════════════════════════════
+
 import 'package:flutter/material.dart';
-import 'models/food_item.dart';
+import 'models/stationery_item.dart';
 import 'halaman_detail.dart';
 
 class HalamanBeranda extends StatefulWidget {
@@ -43,10 +38,7 @@ class _HalamanBerandaState extends State<HalamanBeranda> {
 
 
 
-      // ═══ [APPBAR] ════════════════════════════════════════
-      // Tampilan: Bar oranye di ATAS dengan judul "Menu Resto"
-      // ═════════════════════════════════════════════════════
-      // ✂️ MULAI COPAS APPBAR DARI SINI
+ 
       appBar: AppBar(
         title: Text(
           'Toko Alat Tulis',                       // ← VARIABEL: judul halaman
@@ -56,24 +48,12 @@ class _HalamanBerandaState extends State<HalamanBeranda> {
         centerTitle: true,
         elevation: 0,
       ),
-      // ✂️ AKHIR COPAS APPBAR SAMPAI SINI
-      // ═════════════════════════════════════════════════════
+     
 
 
 
 
 
-
-
-
-
-
-      // ═══ [LIST-MENU] ════════════════════════════════════
-      // Tampilan: Daftar kartu makanan yang bisa di-scroll ke bawah
-      // Syarat: Butuh _daftarMakanan (List<FoodItem>) dari import food_item.dart
-      //         Butuh class _KartuMakanan di bawah file ini
-      // ════════════════════════════════════════════════════
-      // ✂️ MULAI COPAS BODY LIST DARI SINI
       body: ListView.builder(
         padding: EdgeInsets.symmetric(horizontal: 12, vertical: 8),
         itemCount: _daftarMakanan.length,
@@ -104,25 +84,6 @@ class _HalamanBerandaState extends State<HalamanBeranda> {
 
 
 
-
-
-
-
-
-
-// ═══ [KARTU-MENU] ══════════════════════════════════════════
-// Tampilan: 1 kotak putih berisi gambar kiri + info kanan (nama, deskripsi, porsi, harga)
-// Syarat: Butuh import 'models/food_item.dart' di atas file
-// VARIABEL yang bisa diganti:
-//   makanan.name        → nama item
-//   makanan.description → deskripsi
-//   makanan.imageUrl    → gambar
-//   makanan.quantity    → jumlah porsi
-//   makanan.hargaFormatted → harga satuan
-//   makanan.totalFormatted → total harga
-// ════════════════════════════════════════════════════════════
-// ✂️ MULAI COPAS CLASS _KartuMakanan DARI SINI
-// (Copas seluruh blok class ini letakkan di LUAR Scaffold / LUAR State class)
 class _KartuMakanan extends StatelessWidget {
   final FoodItem makanan;       // ← data makanan dari list
   final VoidCallback onKlik;    // ← fungsi saat kartu ditekan
@@ -208,7 +169,7 @@ class _KartuMakanan extends StatelessWidget {
                     children: [
                       Text('${makanan.stock} porsi',
                         style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold,
-                          color: makanan.stock > 0 ? Color(0xFFE07B39) : Colors.grey)),
+                          color: makanan.stock > 0 ? Color.fromARGB(255, 57, 74, 224) : Colors.grey)),
                       Text(makanan.stock > 0 ? makanan.totalFormatted : 'Rp 0',
                         style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold, color: Colors.green)),
                     ],
@@ -235,5 +196,4 @@ class _KartuMakanan extends StatelessWidget {
     );
   }
 }
-// ✂️ AKHIR COPAS CLASS _KartuMakanan SAMPAI SINI
-// ════════════════════════════════════════════════════════════
+

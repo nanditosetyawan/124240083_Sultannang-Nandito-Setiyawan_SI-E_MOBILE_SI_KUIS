@@ -216,10 +216,7 @@ class HalamanProfil extends StatelessWidget {
 
 
 
-// ═══ [KARTU-TOMBOL] ════════════════════════════════════════
-// Tampilan: Kotak putih dengan ikon oranye (kiri) + judul & deskripsi (kanan)
-// Dipakai oleh: TOMBOL-MENU-RESTO dan TOMBOL-PEMESANAN di atas
-// Copas: Ambil seluruh class _KartuTombol jika butuh kartu ikon+teks
+
 // ════════════════════════════════════════════════════════════
 class _KartuTombol extends StatelessWidget {
   final IconData ikon;     // ← data ikon dikirim saat memanggil

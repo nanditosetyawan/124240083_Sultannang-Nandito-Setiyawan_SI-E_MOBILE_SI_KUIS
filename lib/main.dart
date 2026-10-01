@@ -9,7 +9,7 @@ class AplikasiResto extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Aplikasi Pemesanan Resto',     // ← VARIABEL: judul app
+      title: 'Aplikasi Alat Tulis',     // ← VARIABEL: judul app
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(

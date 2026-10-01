@@ -1,12 +1,6 @@
-// ═══════════════════════════════════════════════════════════
-// FILE: halaman_detail.dart
-// Fungsi: Halaman detail saat klik 1 item dari list
-//         Menampilkan foto besar, harga, input porsi, hitung total
-// Dibuka dari: halaman_beranda.dart → Navigator.push
-// Data dari: FoodItem (dikirim via parameter 'makanan')
-// ═══════════════════════════════════════════════════════════
+
 import 'package:flutter/material.dart';
-import 'models/food_item.dart';
+import 'models/stationery_item.dart';
 
 class HalamanDetail extends StatefulWidget {
   final FoodItem makanan; // ← VARIABEL: data item yang dikirim dari beranda
@@ -49,7 +43,7 @@ class _HalamanDetailState extends State<HalamanDetail> {
       return;
     }
     ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(content: Text('Pemesanan ${widget.makanan.name} disimpan!'), backgroundColor: Color(0xFFE07B39)),
+      SnackBar(content: Text('Update Data ${widget.makanan.name} disimpan!'), backgroundColor: Color.fromARGB(255, 72, 57, 209)),
     );
     Navigator.pop(context, _porsiSaatIni); // ← kirim porsi kembali ke halaman sebelumnya
   }
@@ -68,10 +62,7 @@ class _HalamanDetailState extends State<HalamanDetail> {
 
 
 
-      // ═══ [APPBAR-DETAIL] ═════════════════════════════════
-      // Tampilan: Bar oranye atas dengan nama item + tombol back
-      // ═════════════════════════════════════════════════════
-      // ✂️ MULAI COPAS APPBAR DETAIL DARI SINI
+     
       appBar: AppBar(
         title: Text(widget.makanan.name,       // ← VARIABEL: judul = nama item
           style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
@@ -79,7 +70,7 @@ class _HalamanDetailState extends State<HalamanDetail> {
         iconTheme: IconThemeData(color: Colors.white),
         centerTitle: true,
       ),
-      // ✂️ AKHIR COPAS APPBAR DETAIL SAMPAI SINI
+    
       // ═════════════════════════════════════════════════════
 
 
@@ -106,11 +97,7 @@ class _HalamanDetailState extends State<HalamanDetail> {
 
 
 
-            // ═══ [GAMBAR-BESAR] ════════════════════════════
-            // Tampilan: Foto item besar lebar penuh di atas halaman detail
-            // VARIABEL: widget.makanan.imageUrl → URL gambar
-            // ════════════════════════════════════════════════
-            // ✂️ MULAI COPAS GAMBAR BESAR DARI SINI
+   
             ClipRRect(
               borderRadius: BorderRadius.circular(16), // ← VARIABEL: sudut gambar
               child: Image.network(
@@ -125,9 +112,6 @@ class _HalamanDetailState extends State<HalamanDetail> {
                 ),
               ),
             ),
-            // ✂️ AKHIR COPAS GAMBAR BESAR SAMPAI SINI
-            // ════════════════════════════════════════════════
-
 
 
 
@@ -148,11 +132,7 @@ class _HalamanDetailState extends State<HalamanDetail> {
 
 
 
-            // ═══ [JUDUL-HARGA] ═════════════════════════════
-            // Tampilan: Nama item besar + harga satuan oranye + deskripsi
-            // (Dibungkus dalam Column agar menjadi SATU KESATUAN saat dicopas)
-            // ════════════════════════════════════════════════
-            // ✂️ MULAI COPAS JUDUL, HARGA, & DESKRIPSI DARI SINI
+        
             Row(
               crossAxisAlignment: CrossAxisAlignment.end,
               children: [
@@ -196,12 +176,7 @@ Text(widget.makanan.hargaFormatted, // ← VARIABEL: harga satuan formatted
 
 
 
-            // ═══ [INPUT-PORSI] ═════════════════════════════
-            // Tampilan: Kotak input angka "Jumlah (porsi)"
-            // Syarat: Butuh _kontrolerPorsi (TextEditingController)
-            //         Butuh _porsiSaatIni (int) + setState
-            // ════════════════════════════════════════════════
-            // ✂️ MULAI COPAS FIELD INPUT PORSI DARI SINI
+    
             TextField(
               controller: _kontrolerPorsi,      // ← VARIABEL: controller input
               keyboardType: TextInputType.number,
@@ -249,12 +224,7 @@ Text(widget.makanan.hargaFormatted, // ← VARIABEL: harga satuan formatted
 
 
 
-            // ═══ [HITUNG-TOTAL] ════════════════════════════
-            // Tampilan: Baris "Total" di kiri + "Rp xx.xxx" di kanan
-            // Proses hitung: _totalHarga = _porsiSaatIni × widget.makanan.price
-            //   (didefinisikan di getter _totalHarga di atas class ini)
-            // ════════════════════════════════════════════════
-            // ✂️ MULAI COPAS BARIS HITUNG TOTAL DARI SINI
+          
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -265,9 +235,7 @@ Text(widget.makanan.hargaFormatted, // ← VARIABEL: harga satuan formatted
                 ),
               ],
             ),
-            // ✂️ AKHIR COPAS BARIS HITUNG TOTAL SAMPAI SINI
-            // ════════════════════════════════════════════════
-
+            //
 
 
 
@@ -288,11 +256,6 @@ Text(widget.makanan.hargaFormatted, // ← VARIABEL: harga satuan formatted
 
 
 
-            // ═══ [TOMBOL-SIMPAN] ═══════════════════════════
-            // Tampilan: Tombol oranye penuh "Simpan Pemesanan"
-            // Aksi: Validasi → SnackBar → Navigator.pop (kirim data balik)
-            // ════════════════════════════════════════════════
-            // ✂️ MULAI COPAS TOMBOL SIMPAN DARI SINI
             SizedBox(
               width: double.infinity,
               child: ElevatedButton(

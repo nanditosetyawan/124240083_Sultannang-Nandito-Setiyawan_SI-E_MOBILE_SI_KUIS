@@ -11,9 +11,9 @@
 // ════════════════════════════════════════════════════════════════
 class FoodItem {
   // ─── DEKLARASI: Properti/atribut data makanan ─────────────
-  final String name;        // ← nama makanan (tidak bisa diubah = final)
-  final String description; // ← deskripsi makanan (tidak bisa diubah = final)
-  final String imageUrl;    // ← URL gambar makanan (tidak bisa diubah = final)
+  String name;        // ← nama makanan (tidak bisa diubah = final)
+  String description; // ← deskripsi makanan (tidak bisa diubah = final)
+  String imageUrl;    // ← URL gambar makanan (tidak bisa diubah = final)
   int stock;             // ← jumlah porsi (BISA diubah, tidak pakai final)
   final int price;          // ← harga per porsi dalam rupiah (tidak bisa diubah = final)
 
