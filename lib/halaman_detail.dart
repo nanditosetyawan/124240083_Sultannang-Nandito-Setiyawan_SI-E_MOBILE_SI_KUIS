@@ -38,7 +38,7 @@ class _HalamanDetailState extends State<HalamanDetail> {
   void _simpanPemesanan() {
     if (_porsiSaatIni <= 0) {
       ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text('Masukkan jumlah porsi minimal 1!'), backgroundColor: Colors.red),
+        SnackBar(content: Text('Masukkan jumlah harga minimal 1!'), backgroundColor: Colors.red),
       );
       return;
     }
@@ -181,7 +181,7 @@ Text(widget.makanan.hargaFormatted, // ← VARIABEL: harga satuan formatted
               controller: _kontrolerPorsi,      // ← VARIABEL: controller input
               keyboardType: TextInputType.number,
               decoration: InputDecoration(
-                labelText: 'Jumlah (porsi)',     // ← VARIABEL: placeholder
+                labelText: 'Harga',     // ← VARIABEL: placeholder
                 labelStyle: TextStyle(color: Colors.grey),
                 prefixIcon: Icon(Icons.currency_yen_rounded, color: Color.fromARGB(255, 54, 59, 60)),
                 border: OutlineInputBorder(borderRadius: BorderRadius.circular(8)),
