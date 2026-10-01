@@ -170,7 +170,7 @@ class _KartuMakanan extends StatelessWidget {
                       Text('${makanan.stock} porsi',
                         style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold,
                           color: makanan.stock > 0 ? Color.fromARGB(255, 57, 74, 224) : Colors.grey)),
-                      Text(makanan.stock > 0 ? makanan.totalFormatted : 'Rp 0',
+                      Text(makanan.stock > 0 ? makanan.hargaFormatted : 'Rp 0',
                         style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold, color: Colors.green)),
                     ],
                   ),

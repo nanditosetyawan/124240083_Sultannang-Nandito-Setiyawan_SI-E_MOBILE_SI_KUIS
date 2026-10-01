@@ -49,7 +49,7 @@ class FoodItem {
       description: 'Pulpen tinta hitam, nyaman digenggam, ujung 0.5 mm.',
       imageUrl:
           'https://images.unsplash.com/photo-1523726491678-bf852e717f6a?w=800&q=80&auto=format&fit=crop',
-      stock: 0,
+      stock: 2,
       price: 3000,               // ← EDIT: harga dalam rupiah (tanpa titik)
     ),
     // ─── ITEM 2 ───────────────────────────────────────────────
@@ -58,7 +58,7 @@ class FoodItem {
       description: 'Pensil kayu 2B dengan penghapus di ujungnya.',
       imageUrl:
           'https://images.unsplash.com/photo-1598620617377-3bfb505b4384?w=800&q=80&auto=format&fit=crop',
-      stock: 0,
+      stock: 3,
       price: 4000,
     ),
     // ─── ITEM 3 ───────────────────────────────────────────────

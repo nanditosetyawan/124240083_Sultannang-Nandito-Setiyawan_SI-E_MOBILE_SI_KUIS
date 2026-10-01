@@ -184,7 +184,7 @@ TextField(
 SizedBox(height: 24),
 
 TextField(
-                  // ← VARIABEL: controller input
+              controller: _kontrolerPorsi,      // ← VARIABEL: controller input
               keyboardType: TextInputType.number,
               decoration: InputDecoration(
                 labelText: 'Stok tersedia (pcs)',     // ← VARIABEL: placeholder
@@ -218,7 +218,7 @@ TextField(
 
     
             TextField(
-              controller: _kontrolerPorsi,      // ← VARIABEL: controller input
+                  // ← VARIABEL: controller input
               keyboardType: TextInputType.number,
               decoration: InputDecoration(
                 labelText: 'Harga',     // ← VARIABEL: placeholder
