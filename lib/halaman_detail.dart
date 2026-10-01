@@ -165,6 +165,7 @@ TextField(
               decoration: InputDecoration(
                 labelText: 'Deskripsi',     // ← VARIABEL: placeholder
                 labelStyle: TextStyle(color: Colors.grey),
+                
                 prefixIcon: Icon(Icons.document_scanner, color: Color.fromARGB(255, 54, 59, 60)),
                 border: OutlineInputBorder(borderRadius: BorderRadius.circular(8)),
                 focusedBorder: OutlineInputBorder(
