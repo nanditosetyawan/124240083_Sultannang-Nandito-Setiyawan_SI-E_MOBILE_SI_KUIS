@@ -160,8 +160,8 @@ Text(widget.makanan.hargaFormatted, // ← VARIABEL: harga satuan formatted
 SizedBox(height: 24),
 
 TextField(
-              controller: _kontrolerPorsi,      // ← VARIABEL: controller input
-              keyboardType: TextInputType.number,
+                  // ← VARIABEL: controller input
+              keyboardType: TextInputType.text,
               decoration: InputDecoration(
                 labelText: 'Deskripsi',     // ← VARIABEL: placeholder
                 labelStyle: TextStyle(color: Colors.grey),
@@ -184,7 +184,7 @@ TextField(
 SizedBox(height: 24),
 
 TextField(
-              controller: _kontrolerPorsi,      // ← VARIABEL: controller input
+                  // ← VARIABEL: controller input
               keyboardType: TextInputType.number,
               decoration: InputDecoration(
                 labelText: 'Stok tersedia (pcs)',     // ← VARIABEL: placeholder
