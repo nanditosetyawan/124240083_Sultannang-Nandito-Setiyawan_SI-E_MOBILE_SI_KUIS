@@ -153,16 +153,55 @@ Text(widget.makanan.hargaFormatted, // ← VARIABEL: harga satuan formatted
                   style: TextStyle(fontSize: 14, color: Colors.grey[700], height: 1.5)),
               ],
             ),
-            // ✂️ AKHIR COPAS JUDUL, HARGA, & DESKRIPSI SAMPAI SINI
-            // ════════════════════════════════════════════════
+           
 
 
 
+SizedBox(height: 24),
 
+TextField(
+              controller: _kontrolerPorsi,      // ← VARIABEL: controller input
+              keyboardType: TextInputType.number,
+              decoration: InputDecoration(
+                labelText: 'Deskripsi',     // ← VARIABEL: placeholder
+                labelStyle: TextStyle(color: Colors.grey),
+                prefixIcon: Icon(Icons.document_scanner, color: Color.fromARGB(255, 54, 59, 60)),
+                border: OutlineInputBorder(borderRadius: BorderRadius.circular(8)),
+                focusedBorder: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(8),
+                  borderSide: BorderSide(color: Color.fromARGB(255, 57, 57, 224), width: 2),
+                ),
+                filled: true,
+                fillColor: Colors.white,
+              ),onChanged: (nilai) {
+                setState(() {
+                
+                });
+              },
+            ),
 
+SizedBox(height: 24),
 
-
-
+TextField(
+              controller: _kontrolerPorsi,      // ← VARIABEL: controller input
+              keyboardType: TextInputType.number,
+              decoration: InputDecoration(
+                labelText: 'Stok tersedia (pcs)',     // ← VARIABEL: placeholder
+                labelStyle: TextStyle(color: Colors.grey),
+                prefixIcon: Icon(Icons.storage, color: Color.fromARGB(255, 54, 59, 60)),
+                border: OutlineInputBorder(borderRadius: BorderRadius.circular(8)),
+                focusedBorder: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(8),
+                  borderSide: BorderSide(color: Color.fromARGB(255, 57, 57, 224), width: 2),
+                ),
+                filled: true,
+                fillColor: Colors.white,
+              ),onChanged: (nilai) {
+                setState(() {
+                
+                });
+              },
+            ),
 
 
             SizedBox(height: 24),
@@ -196,7 +235,7 @@ Text(widget.makanan.hargaFormatted, // ← VARIABEL: harga satuan formatted
                 setState(() {
                   _porsiSaatIni = int.tryParse(nilai) ?? 0;
                   // ↑ saat user ketik angka → _porsiSaatIni berubah
-                  //   → _totalHarga otomatis ikut berubah (karena getter)
+                  //   → otomatis ikut berubah (karena getter)
                   //   → setState membuat tampilan rebuild
                 });
               },
